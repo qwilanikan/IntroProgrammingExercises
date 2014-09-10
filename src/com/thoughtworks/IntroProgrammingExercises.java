@@ -56,6 +56,31 @@ public class IntroProgrammingExercises {
         }
     }
 
+    //Isosceles Triangle
+    //Given a number n, print a centered triangle. Example for n=3:
+    //          *
+    //         ***
+    //        *****
+    public void isoscelesTriangle(int n){
+        int width = 1;
+        int whiteSpace = n - 1;
+        while (n > 0) {
+            int w = width;
+            int s = whiteSpace;
+            while(s > 0){
+                System.out.print(" ");
+                s--;
+            }
+            while (w >  0) {
+                System.out.print("*");
+                w--;
+            }
+            System.out.println();
+            width+=2;
+            whiteSpace--;
+            n--;
+        }
+    }
 
     public static void main(String[] args) {
         IntroProgrammingExercises exercises = new IntroProgrammingExercises();
@@ -63,5 +88,8 @@ public class IntroProgrammingExercises {
         exercises.drawAHorizontalLine(8);
         exercises.drawAVerticalLine(3);
         exercises.drawARightTriangle(3);
+
+        System.out.println(" ");
+        exercises.isoscelesTriangle(3);
     }
 }
