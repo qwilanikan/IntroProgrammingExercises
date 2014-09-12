@@ -1,5 +1,7 @@
 package com.thoughtworks;
 
+import java.util.ArrayList;
+
 public class IntroProgrammingExercises {
 
     //Easiest exercise ever
@@ -192,9 +194,34 @@ public class IntroProgrammingExercises {
 
     }
 
+    /*
+     *Prime Factors Exercise
+     *
+     *Write a method generate(int n) that given an integer N will return a list of integers such that the numbers are the factors of N and are arranged in increasing numerical order.
+     *
+     *For example, generate(1) should return an empty list and generate(30) should return the numbers: 2,3,5.
+     */
+    public void generate(int n){
+        int possibleFactor = 1;
+        ArrayList<Integer> factors = new ArrayList<Integer>();
+        while (possibleFactor < n){
+            if(n % possibleFactor == 0){
+
+                factors.add(possibleFactor);
+
+            }
+            possibleFactor++;
+        }
+        System.out.print("factors of " + n + ": ");
+        for(int factor: factors){
+            System.out.print(factor + " ");
+        }
+
+    }
 
     public static void main(String[] args) {
         IntroProgrammingExercises exercises = new IntroProgrammingExercises();
+        /*
         exercises.easiestExerciseEver();
         exercises.drawAHorizontalLine(8);
         exercises.drawAVerticalLine(3);
@@ -206,6 +233,9 @@ public class IntroProgrammingExercises {
         exercises.diamondWithName(3);
 
         exercises.fizzBuzz();
+        *
+        */
+        exercises.generate(30);
 
     }
 }
